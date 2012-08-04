@@ -10,6 +10,11 @@
 	<h1>Parallax Background</h1>
 
 	<section class="banner">
+		<section class="info">
+			<h1>Lorem Ipsum Dolor</h1>
+			<span class="break"></span>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</section>
 		<img class="main" src="images/hong kong.jpg" alt="">
 	</section>
 
@@ -33,6 +38,7 @@
 	(function(){
 		//Parallax
 		var banner = $('section.banner'),
+			info = $(banner).children('section.info'),
 			image = $(banner).children('img.main'),
 			height = $(image).height() - $(banner).height(),
 			scroll = $(window).scrollTop();
@@ -43,14 +49,25 @@
 			backgroundImage: 'url(\'' +  image.attr('src') + '\')'
 		})
 
-		function updateScroll(){
+		function update(){
 			scroll = $(window).scrollTop();
+			updateOpacity();
+			updateScroll();
+		}
+
+		function updateOpacity(){
+			$(info).css({
+				opacity: 1 - (scroll / height * 2)
+			})
+		}
+
+		function updateScroll(){
 			$(banner).css({
 				backgroundPositionY: (scroll < height) ? -scroll : -height
 			});
 		};
 
-		$(window).scroll( updateScroll );
+		$(window).scroll( update );
 
 	})();
 
