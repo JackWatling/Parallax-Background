@@ -7,8 +7,25 @@
 </head>
 <body>
 
+	<section class="padding" data-height="500"></section>
+
 	<section class="banner"></section>
 
+	<section class="padding" data-height="500"></section>
+
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+	<script type="text/javascript">
+
+	(function(){
+
+		//Padding sections
+		$('section.padding').css({
+			height: $(this).data(height)
+		})
+
+	})();
+
+	</script>
 </body>
 </html>

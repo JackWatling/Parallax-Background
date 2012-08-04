@@ -1,0 +1,19 @@
+body{
+	background: #ededed;
+	margin: 0;
+}
+
+section.padding{
+	height: 600px;
+}
+
+section.padding.small{
+	height: 200px;
+}
+
+section.banner{
+	width: 100%;
+	height: 500px;
+	overflow: hidden;
+	background: url('../images/Hong Kong.jpg') 50% 0 no-repeat;
+}
