@@ -1,33 +1,38 @@
+/*General*/
 body{
 	background: #ededed;
 	margin: 0;
-	padding-top: 10px;
 }
 
-h1{
-	font-family: 'RobotoThin';
-	font-weight: normal;
-	text-align: center;
-	font-size: 3em;
-	color: #919191;
-	margin: 10px auto;
-	text-shadow: 1px 1px 0 #00bdf4;
-}
-
-section.content{
+.wrapper{
 	width: 900px;
 	margin: 0 auto;
 }
 
+/*Header*/
+header.main{
+	text-align: center;
+}
+
+header.main h1{
+	font-family: 'RobotoThin';
+	font-weight: normal;
+	font-size: 3em;
+	color: #919191;
+	text-shadow: 1px 1px 0 #00bdf4;
+	margin: 15px 0 0 0;
+}
+
+/*Content*/
 section.content p{
 	font-family: 'RobotoLight';
-	font-weight: normal;
 	color: #a2a2a2;
 	font-size: 0.9em;
 	margin: 10px 0;
 	line-height: 1.25em;
 }
 
+/*Banner*/
 section.banner{
 	width: 100%;
 	height: 600px;
@@ -38,34 +43,30 @@ section.banner{
 }
 
 section.banner img{
-	position: absolute;
+	visibility: hidden;
 }
 
 section.banner section.info{
 	font-family: 'RobotoRegular';
 	color: rgba(255, 255, 255, 0.5);
+	text-align: center;
 	margin: 250px auto 0 auto;
 }
 
+section.banner section.info h1{
+	font-size: 3.5em;
+	font-weight: normal;
+	margin: 0;
+}
+
+section.banner section.info p{
+	margin-top: 10px;
+}
+
 section.banner section.info span.break{
-	width: 500px;
+	width: 400px;
 	height: 2px;
 	display: block;
 	margin: 0 auto;
 	background: rgba(255, 255, 255, 0.5);
-}
-
-section.banner section.info h1{
-	font-family: 'RobotoRegular';
-	font-size: 3.5em;
-	color: rgba(255, 255, 255, 0.5);
-	text-shadow: none;
-	text-transform: uppercase;
-
-}
-
-section.banner section.info p{
-	color: rgba(255, 255, 255, 0.5);
-	text-align: center;
-	margin-top: 10px;
 }
