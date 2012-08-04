@@ -2,12 +2,12 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-	<title>Paralax Background</title>
+	<title>Parallax Background</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-	<section class="padding" data-height="500"></section>
+	<section class="padding" data-height="250"></section>
 
 	<section class="banner"></section>
 
@@ -18,11 +18,23 @@
 	<script type="text/javascript">
 
 	(function(){
-
 		//Padding sections
-		$('section.padding').css({
-			height: $(this).data(height)
-		})
+		$('section.padding').each( function() {
+			$(this).css({
+				height: $(this).data( 'height' )
+			});
+		});
+
+		//Parallax
+		var banner = $('section.banner');
+		var scroll = $(window).scrollTop();
+
+		$(window).scroll( function() {
+			scroll = $(window).scrollTop();
+			$(banner).css({
+				backgroundPositionY: -scroll
+			})
+		});
 
 	})();
 
