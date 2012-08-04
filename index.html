@@ -43,15 +43,20 @@
 	(function(){
 		//Parallax
 		var banner = $('section.banner'),
+			height = $(banner).height(),
 			info = $(banner).children('section.info'),
 			image = $(banner).children('img.main'),
-			height = $(image).height() - $(banner).height(),
+			offset = $(image).height() - height,
 			scroll = $(window).scrollTop();
 
 		$(image).remove();
 
 		$(banner).css({
 			backgroundImage: 'url(\'' +  image.attr('src') + '\')'
+		})
+
+		$(info).css({
+			marginTop: (height - $(info).height()) / 2
 		})
 
 		function update(){
@@ -62,13 +67,13 @@
 
 		function updateOpacity(){
 			$(info).css({
-				opacity: 1 - (scroll / height * 2)
+				opacity: (scroll / offset * 2) < 1 ? 1 - (scroll / offset * 2) : 0
 			})
 		}
 
 		function updateScroll(){
 			$(banner).css({
-				backgroundPositionY: (scroll < height) ? -scroll : -height
+				backgroundPositionY: (scroll < offset) ? -scroll : -offset
 			});
 		};
 
